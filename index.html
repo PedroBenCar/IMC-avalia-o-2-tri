@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>IMC</title>
+    </footer>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            outline: none;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            color: #eee;
+            font-family: sans-serif;
+        }
+        body{
+            background: #362c85;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            overflow: scroll;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+overflow: hidden;
+        }
+        .cont{
+            padding: 5px;
+            border-radius: 5px;
+            /* background: #393b41; */
+            border-radius: 2px solid;
+        }
+        .title{
+            margin: 10px 5px;
+            border-bottom: 2px solid #ffffff;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .center{
+            align-items: center;
+            justify-content: center;
+        }
+        .flex{
+            display: flex;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .row{
+            flex-direction: row;
+        }
+        h3{
+            font-size: 13px;
+            margin: 10px 20px;
+            text-align: left;
+        }
+        input{
+            width: calc(100% - 60px);
+            margin: 15px;
+            background: #393b41;
+            border: none;
+            border-bottom: 2px solid #494b52;
+            padding: 5px 15px;
+            font-size: 15px;
+            
+        }
+        button{
+            width: calc(100% - 60px);
+            margin: 10px;
+            padding: 7px 20px;
+            background: #237c23;
+            border: none;
+        }
+        .tb{
+            width: calc(100% - 250px);
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cont">
+            <h1 class="title">Calculadora de IMC do Benites</h1>
+            <div class="flex center row">
+                <div class="flex column tb">
+                    <input id="peso" type="number" placeholder="Peso">
+                </div>
+                <div class="flex column tb">
+                    <input id="altura" type="number" placeholder="Altura">
+                </div>
+            </div>
+                <!-- bt out  -->
+            <div class="flex center row">
+                <button onclick="calc()">Calcular</button>
+                <button onclick="limpar()">limpar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const peso = document.getElementById('peso');
+        const altura = document.getElementById('altura');
+        
+        let list = [];
+        
+
+        const calc = () => {
+            let p = peso.value;
+            let a = altura.value;
+            
+            if(p && a){
+                let res = p / (a * a);
+
+                list.push(res);
+            }
+
+            console.log(list)
+        }
+
+        const limpar = () => {
+            peso.value = "";
+            altura.value = "";
+            list = [];
+        }
+
+    </script>
+    <script src="index.js"></script>
+    <footer>
+        <li>Pedro Henrique Benites</li>
+        <li>2 ano B</li>
+        <li> Escola S Sesi Senai Ctai</li>
+</body>
+</html>
